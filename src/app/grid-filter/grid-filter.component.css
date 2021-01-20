@@ -1,0 +1,6 @@
+.example-card {
+  max-width: 800px;
+}
+.example-card .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
