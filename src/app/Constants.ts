@@ -1,5 +1,20 @@
 import {SelectObject} from './dataClasses';
 
+export const INTERRUPTION_FREQUENCY: SelectObject[] = [
+  {value: '0', viewValue: 'Less Then 5%'},
+  {value: '1', viewValue: 'Less Then 10%'},
+  {value: '2', viewValue: 'Less Then 15%'},
+  {value: '3', viewValue: 'Less Then 20%'},
+  {value: '4', viewValue: 'All'},
+];
+
+export const NETWORK_PERFORMANCE: SelectObject[] = [
+  {value: '0', viewValue: 'Any Network Performance'},
+  {value: '1', viewValue: 'Low (Up to 15 Gigabit)'},
+  {value: '2', viewValue: 'Moderate (Up to 25 Gigabit)'},
+  {value: '3', viewValue: 'High (above 25 Gigabit)'},
+];
+
 
 export const OS: SelectObject[] = [
     {value: 'linux', viewValue: 'Linux'},
@@ -30,15 +45,26 @@ export const REGIONS: SelectObject[] = [
   {value: 'all', viewValue: 'All'},
   ];
 export const TYPE_PURPOSE: SelectObject[] = [
-    {value: 'GENERAL_PURPOSE', viewValue: 'General Purpose'},
-    {value: 'COMPUTE_OPTIMIZED', viewValue: 'Compute Optimized'},
-    {value: 'MEMORY_OPTIMIZED', viewValue: 'Memory Optimized'},
-    {value: 'ACCELERATED_COMPUTING', viewValue: 'Accelerated Computing'},
-    {value: 'STORAGE_OPTIMIZED', viewValue: 'Storage Optimized'},
-    {value: 'ALL', viewValue: 'All'},
+    {value: 'General Purpose', viewValue: 'General Purpose'},
+    {value: 'Compute Optimized', viewValue: 'Compute Optimized'},
+    {value: 'Memory Optimized', viewValue: 'Memory Optimized'},
+    {value: 'Accelerated Computing', viewValue: 'Accelerated Computing'},
+    {value: 'Storage Optimized', viewValue: 'Storage Optimized'},
+    {value: 'all', viewValue: 'All'},
   ];
 export const INTERRUPTION_BEHAVIOR: SelectObject[] = [
   {value: 'terminate', viewValue: 'Terminate'},
   {value: 'hibernate', viewValue: 'Hibernate'},
   {value: 'stop', viewValue: 'Stop'}
+];
+
+export const STORAGE_TYPES: SelectObject[] = [
+  {value: 'gp2', viewValue: 'General Purpose SSD (gp2)'},
+  {value: 'gp3', viewValue: 'General Purpose SSD (gp3)'},
+  {value: 'io1', viewValue: 'Provisioned IOPS SSD (io1)'},
+  {value: 'io2', viewValue: 'Provisioned IOPS SSD (io2)'},
+  {value: 'st1', viewValue: 'Throughput Optimized HDD (st1)'},
+  {value: 'sc1', viewValue: 'Cold HDD (sc1)'},
+  {value: 'magnetic', viewValue: 'Magnetic (previous generation)'},
+  {value: 'all', viewValue: 'All'},
 ];

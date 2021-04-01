@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {DataService} from '../data.service';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-aws-grid',
@@ -9,45 +8,70 @@ import {DataService} from '../data.service';
 export class AwsGridComponent implements OnInit {
 
   title = 'my-app';
-  region: string;
-  typeMajor: string;
-  typeMinor: string;
-  os: string;
-  interruptionFrequency?: string;
-  onDemandSavings: number;
-  cores: number;
-  ramGB: number;
 
+  showData = true;
+  @Input() set data(data: any[]){
+    if (data !== undefined && data.length > 0){
+      this.rowData = data;
+      this.showData = true;
+    }
+  }
   columnDefs = [
-    { field: 'region',
+    { headerName: 'Type name',
+      field: 'typeName',
       filter: 'agTextColumnFilter',
       sortable: true},
-    { field: 'typeMajor',
-      sortable: true,
-      filter: 'agTextColumnFilter'},
-    { field: 'typeMinor',
+    { headerName: 'Type family',
+      field: 'family',
       filter: 'agTextColumnFilter',
       sortable: true},
-    { field: 'os',
+    { headerName: 'Total price (USD/H)',
+      field: 'total_price',
       filter: 'agTextColumnFilter',
       sortable: true},
-    { field: 'onDemandSavings',
-      filter: 'agNumberColumnFilter',
+    { headerName: 'Region',
+      field: 'region',
+      filter: 'agTextColumnFilter',
       sortable: true},
-    { field: 'cores',
-      filter: 'agNumberColumnFilter',
+    { headerName: 'vCPUs GB',
+      field: 'cpu',
+      filter: 'agTextColumnFilter',
       sortable: true},
-    { field: 'ramGB',
-      filter: 'agNumberColumnFilter',
+    { headerName: 'Memory GB',
+      field: 'memory',
+      filter: 'agTextColumnFilter',
+      sortable: true},
+    { headerName: 'Network GB/s',
+      field: 'network',
+      filter: 'agTextColumnFilter',
+      sortable: true},
+    { headerName: 'Interruption Frequency',
+      field: 'interruption_frequency',
+      filter: 'agTextColumnFilter',
+      sortable: true},
+    { headerName: 'Storage Size (GB)',
+      field: 'storage_size',
+      filter: 'agTextColumnFilter',
+      sortable: true},
+    { headerName: 'Storage Type',
+      field: 'volumeType',
+      filter: 'agTextColumnFilter',
+      sortable: true},
+    { headerName: 'OnDemand Price (USD/H)',
+      field: 'onDemandPrice',
+      filter: 'agTextColumnFilter',
+      sortable: true},
+    { headerName: 'Spot discount (%)',
+      field: 'discount',
+      filter: 'agTextColumnFilter',
+      sortable: true},
+    { headerName: 'Storage price (USD*GB)/H',
+      field: 'storagePrice',
+      filter: 'agTextColumnFilter',
       sortable: true},
   ];
 
   rowData = [];
-  constructor(public dataService: DataService) { }
-
   ngOnInit(): void {
-    this.dataService.getAdvisorData().subscribe( data => {
-      this.rowData = data;
-    });
   }
 }

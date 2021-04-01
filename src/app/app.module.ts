@@ -14,12 +14,19 @@ import {MatOptionModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatRadioModule} from '@angular/material/radio';
+import { SingleInstanceComponent } from './single-instance/single-instance.component';
+import { FleetSearchComponent } from './fleet-search/fleet-search.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
     AppComponent,
     AwsGridComponent,
-    GridFilterComponent
+    GridFilterComponent,
+    SingleInstanceComponent,
+    FleetSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +39,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatOptionModule,
     MatSelectModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatRadioModule,
+    MatTabsModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

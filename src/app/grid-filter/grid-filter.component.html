@@ -1,8 +1,7 @@
 
 <mat-card class="example-card">
   <mat-card-header>
-    <mat-card-title>Filters</mat-card-title>
-    <mat-card-subtitle>apply instance filters</mat-card-subtitle>
+    <mat-card-title>Instance Parameters</mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <form>
@@ -13,7 +12,7 @@
         <mat-hint>min number of vCPUs for the instance, i.e. 4,8,16 ...</mat-hint>
       </mat-form-field>
       <mat-form-field>
-        <mat-label>memory</mat-label>
+        <mat-label>Memory</mat-label>
         <input [(ngModel)]="memory" name="memory" matInput placeholder="Placeholder" type="number" required>
         <mat-hint>min memory for instance (GB)</mat-hint>
       </mat-form-field>
@@ -23,51 +22,80 @@
           <mat-option *ngFor="let o of OSs" [value]="o.value">{{o.viewValue}}</mat-option>
         </mat-select>
       </mat-form-field>
-    <br>
-      <h2>Optional parameters</h2>
       <mat-form-field >
-        <mat-label>region</mat-label>
+        <mat-label>Size (GB)</mat-label>
+        <input [(ngModel)]="size" name="size" matInput placeholder="Placeholder" type="number" required>
+        <mat-hint>min storage size</mat-hint>
+      </mat-form-field>
+    <br>
+      <h2>Optional Instance Parameters</h2>
+      <mat-form-field >
+        <mat-label>Region</mat-label>
         <mat-select [(ngModel)]="selectedRegion" name="region">>
           <mat-option *ngFor="let region of regions" [value]="region.value">{{region.viewValue}}</mat-option>
         </mat-select>
       </mat-form-field>
     <mat-form-field>
-      <mat-label>type</mat-label>
+      <mat-label>Category</mat-label>
       <mat-select [(ngModel)]="type" name="type">
         <mat-option *ngFor="let type of typePurpose" [value]="type.value">{{type.viewValue}}</mat-option>
       </mat-select>
     </mat-form-field>
       <mat-form-field>
-        <mat-label>interruption behavior</mat-label>
+        <mat-label>Interruption behavior</mat-label>
         <mat-select [(ngModel)]="behavior" name="behavior">
           <mat-option *ngFor="let behavior of interruptionBehavior" [value]="behavior.value">{{behavior.viewValue}}</mat-option>
         </mat-select>
       </mat-form-field>
-      <mat-form-field >
-        <mat-label>network</mat-label>
-        <input [(ngModel)]="network" name="network" matInput placeholder="Placeholder" type="number">
-        <mat-hint>min network performance for instance (Gbs)</mat-hint>
-      </mat-form-field>
-      <br>
-      <h2>Storage</h2>
-      <mat-form-field >
-        <mat-label>Size (GB)</mat-label>
-        <input [(ngModel)]="size" name="size" matInput placeholder="Placeholder" type="number">
-        <mat-hint>min storage size</mat-hint>
+      <mat-form-field>
+        <mat-label>Interruption frequency</mat-label>
+        <mat-select [(ngModel)]="frequency" name="frequency">
+          <mat-option *ngFor="let frequency of interruptionFrequency" [value]="frequency.value">{{frequency.viewValue}}</mat-option>
+        </mat-select>
       </mat-form-field>
       <mat-form-field>
-        <mat-label>IOPS MiB I/O</mat-label>
-        <input [(ngModel)]="iops" name="iops" matInput placeholder="Placeholder" type="number">
-        <mat-hint>max iops for instance (GB)</mat-hint>
+        <mat-label>Network Performance</mat-label>
+          <input [(ngModel)]="network" name="network" matInput placeholder="Placeholder" type="number" required>
+        <mat-hint>min memory for instance (GB)</mat-hint>
       </mat-form-field>
-      <mat-form-field >
-        <mat-label>Throughput </mat-label>
-        <input [(ngModel)]="throughput" name="throughput" matInput placeholder="Placeholder" type="number">
-        <mat-hint>max throughput for instance (MiB/s)</mat-hint>
-      </mat-form-field>
+        <mat-checkbox class="example-margin" [(ngModel)]="burstable" [disabled]="network == null || network == 0">Burstable</mat-checkbox>
+      <br>
+      <h2>Optional Storage Parameters</h2>
+      <mat-radio-group aria-label="Select an option" style="display: flex;">
+        <mat-card class="option-card">
+          <mat-card-header>
+            <mat-radio-button value="1" #specificationStorage [checked]="true">Choose by specifications</mat-radio-button>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-form-field>
+            <mat-label>IOPS MiB I/O</mat-label>
+            <input [(ngModel)]="iops" name="iops" matInput placeholder="Placeholder" type="number" [disabled]="!specificationStorage.checked">
+            <mat-hint>max iops for instance (GB)</mat-hint>
+          </mat-form-field>
+            <mat-form-field >
+              <mat-label>Throughput </mat-label>
+              <input [(ngModel)]="throughput" name="throughput" matInput placeholder="Placeholder" type="number" [disabled]="!specificationStorage.checked">
+              <mat-hint>max throughput for instance (MiB/s)</mat-hint>
+            </mat-form-field>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="option-card">
+          <mat-card-header>
+            <mat-radio-button value="2" #manualStorage [checked]="false">Manual Storage selection</mat-radio-button>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-form-field>
+              <mat-label>Storage Type</mat-label>
+              <mat-select [(ngModel)]="storage" name="storageType" [disabled]="!manualStorage.checked">
+                <mat-option *ngFor="let type of storageTypes" [value]="type.value">{{type.viewValue}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </mat-card-content>
+        </mat-card>
+      </mat-radio-group>
     </form>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button (click)="submit()">apply filters</button>
+    <button mat-button (click)="submit(manualStorage.checked)">search instances</button>
   </mat-card-actions>
 </mat-card>

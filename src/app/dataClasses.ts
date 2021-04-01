@@ -53,6 +53,9 @@ export interface Filter {
   throughput: string;
   iops: string;
   size: string;
-  network?: string;
+  network?: number;
   behavior?: string;
+  frequency?: string;
+  storageType?: string;
+  burstable?: boolean;
 }
