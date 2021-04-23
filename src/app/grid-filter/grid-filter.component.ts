@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import * as Constants from '../Constants';
 import {Filter} from '../dataClasses';
 
@@ -9,6 +9,8 @@ import {Filter} from '../dataClasses';
   styleUrls: ['./grid-filter.component.css']
 })
 export class GridFilterComponent implements OnInit {
+  @Input()
+  minimize: boolean;
   @Output()
   applyFilter: EventEmitter<Filter> = new EventEmitter<Filter>();
   regions = Constants.REGIONS;
@@ -32,6 +34,7 @@ export class GridFilterComponent implements OnInit {
   storage: string;
   burstable: boolean;
   specificationStorage: any;
+  name: string;
 
   constructor() { }
 
@@ -53,6 +56,7 @@ export class GridFilterComponent implements OnInit {
       frequency: this.frequency,
       storageType: manualStorage ? this.storage : null,
       burstable: this.network == null || this.network <= 0 || this.burstable,
+      name: this.name,
     };
     this.applyFilter.emit(filter);
   }

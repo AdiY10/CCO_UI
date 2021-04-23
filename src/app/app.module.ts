@@ -19,6 +19,11 @@ import { SingleInstanceComponent } from './single-instance/single-instance.compo
 import { FleetSearchComponent } from './fleet-search/fleet-search.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { FleetResultsComponent } from './fleet-results/fleet-results.component';
+import { FleetParamsComponent } from './fleet-params/fleet-params.component';
+import { AddComponentModalComponent } from './fleet-params/add-component-modal/add-component-modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AddAppModalComponent } from './fleet-params/add-app-modal/add-app-modal.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,11 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     AwsGridComponent,
     GridFilterComponent,
     SingleInstanceComponent,
-    FleetSearchComponent
+    FleetSearchComponent,
+    FleetResultsComponent,
+    FleetParamsComponent,
+    AddComponentModalComponent,
+    AddAppModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +51,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     BrowserAnimationsModule,
     MatRadioModule,
     MatTabsModule,
+    NgbModule,
     MatCheckboxModule
   ],
   providers: [],

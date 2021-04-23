@@ -1,0 +1,15 @@
+  <h4>Results:</h4>
+  <ag-grid-angular
+    #agGrid
+    style="width: 1800px; height: 1000px;"
+    id="myGrid"
+    class="ag-theme-alpine"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [groupDefaultExpanded]="groupDefaultExpanded"
+    [masterDetail]="true"
+    [detailCellRendererParams]="detailCellRendererParams"
+    [detailRowAutoHeight]="detailRowAutoHeight"
+    (gridReady)="onGridReady($event)"
+  ></ag-grid-angular>

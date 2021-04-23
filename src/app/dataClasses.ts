@@ -58,4 +58,5 @@ export interface Filter {
   frequency?: string;
   storageType?: string;
   burstable?: boolean;
+  name?: string;
 }
