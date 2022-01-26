@@ -13,6 +13,7 @@ export class GridFilterComponent implements OnInit {
   minimize: boolean;
   @Output()
   applyFilter: EventEmitter<Filter> = new EventEmitter<Filter>();
+  applyFilter2: EventEmitter<Filter> = new EventEmitter<Filter>();
   regions = Constants.REGIONS;
   OSs = Constants.OS;
   typePurpose = Constants.TYPE_PURPOSE;

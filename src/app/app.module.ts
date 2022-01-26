@@ -24,9 +24,11 @@ import { FleetParamsComponent } from './fleet-params/fleet-params.component';
 import { AddComponentModalComponent } from './fleet-params/add-component-modal/add-component-modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddAppModalComponent } from './fleet-params/add-app-modal/add-app-modal.component';
+import { AwsDataComponent } from './aws-data/aws-data.component';
 
 @NgModule({
   declarations: [
+    AwsDataComponent,
     AppComponent,
     AwsGridComponent,
     GridFilterComponent,

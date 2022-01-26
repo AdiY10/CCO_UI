@@ -42,7 +42,7 @@ export const REGIONS: SelectObject[] = [
     {value: 'eu-north-1', viewValue: 'Europe (Stockholm)'},
     {value: 'me-south-1', viewValue: 'Middle East (Bahrain)'},
     {value: 'sa-east-1', viewValue: 'South America (São Paulo)'},
-  {value: 'all', viewValue: 'All'},
+    {value: 'all', viewValue: 'All'},
   ];
 export const TYPE_PURPOSE: SelectObject[] = [
     {value: 'General Purpose', viewValue: 'General Purpose'},

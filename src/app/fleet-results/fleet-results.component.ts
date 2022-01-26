@@ -40,10 +40,11 @@ export class FleetResultsComponent implements OnInit {
       detailGridOptions: {
         columnDefs: [
           { field: 'typeName', cellRenderer: 'agGroupCellRenderer' },
-          { field: 'total_price' },
+          { field: 'spot_price' },
           { field: 'cpu' },
           { field: 'memory' },
-          { field: 'network' },
+          { field: 'CPU/Price_Score' },
+          { field: 'Memory/Price_Score' },
           { field: 'onDemandPrice' },
           { field: 'discount' },
         ],
@@ -57,12 +58,6 @@ export class FleetResultsComponent implements OnInit {
             columnDefs: [
               { field: 'appName'},
               { field: 'componentName' },
-              { field: 'storagePrice' },
-              { field: 'volumeType' },
-              { field: 'usageType' },
-              { field: 'throughput' },
-              { field: 'IOPS' },
-              { field: 'productFamily' },
             ],
             defaultColDef: { flex: 1 },
           },
