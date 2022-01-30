@@ -48,8 +48,9 @@ export const TYPE_PURPOSE: SelectObject[] = [
     {value: 'General Purpose', viewValue: 'General Purpose'},
     {value: 'Compute Optimized', viewValue: 'Compute Optimized'},
     {value: 'Memory Optimized', viewValue: 'Memory Optimized'},
-    {value: 'Accelerated Computing', viewValue: 'Accelerated Computing'},
+    {value: 'Media Accelerator Instances', viewValue: 'Media Accelerator Instances'},
     {value: 'Storage Optimized', viewValue: 'Storage Optimized'},
+    {value: 'GPU instance', viewValue: 'GPU instance'},
     {value: 'all', viewValue: 'All'},
   ];
 export const INTERRUPTION_BEHAVIOR: SelectObject[] = [
