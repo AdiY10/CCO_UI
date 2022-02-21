@@ -1,10 +1,10 @@
 import {SelectObject} from './dataClasses';
 
 export const INTERRUPTION_FREQUENCY: SelectObject[] = [
-  {value: '0', viewValue: 'Less Then 5%'},
-  {value: '1', viewValue: 'Less Then 10%'},
-  {value: '2', viewValue: 'Less Then 15%'},
-  {value: '3', viewValue: 'Less Then 20%'},
+  {value: '0', viewValue: 'Less Than 5%'},
+  {value: '1', viewValue: 'Less Than 10%'},
+  {value: '2', viewValue: 'Less Than 15%'},
+  {value: '3', viewValue: 'Less Than 20%'},
   {value: '4', viewValue: 'All'},
 ];
 
