@@ -25,6 +25,7 @@ import { AddComponentModalComponent } from './fleet-params/add-component-modal/a
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddAppModalComponent } from './fleet-params/add-app-modal/add-app-modal.component';
 import { AwsDataComponent } from './aws-data/aws-data.component';
+import { AzureFleetSearchComponent } from './azure-fleet-search/azure-fleet-search.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { AwsDataComponent } from './aws-data/aws-data.component';
     FleetParamsComponent,
     AddComponentModalComponent,
     AddAppModalComponent,
+    AzureFleetSearchComponent
   ],
   imports: [
     BrowserModule,

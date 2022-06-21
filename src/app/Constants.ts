@@ -16,10 +16,15 @@ export const NETWORK_PERFORMANCE: SelectObject[] = [
 ];
 
 
-export const OS: SelectObject[] = [
+export const AWSOS: SelectObject[] = [
     {value: 'linux', viewValue: 'Linux'},
     {value: 'windows', viewValue: 'Windows'}
   ];
+ 
+export const AzureOS: SelectObject[] = [
+    {value: 'linux', viewValue: 'Linux'},
+    {value: 'windows', viewValue: 'Windows'}
+  ];  
 export const AWSREGIONS: SelectObject[] = [
     {value: 'us-east-2', viewValue: 'US East (Ohio)'},
     {value: 'us-east-1', viewValue: 'US East (N. Virginia)'},
@@ -44,7 +49,7 @@ export const AWSREGIONS: SelectObject[] = [
     {value: 'sa-east-1', viewValue: 'South America (São Paulo)'},
     {value: 'all', viewValue: 'All'},
   ];
-  export const AzureREGIONS: SelectObject[] = [
+export const AzureREGIONS: SelectObject[] = [
     {value: 'East US', viewValue: 'East US'},
     {value: 'all', viewValue: 'All'},
   ];

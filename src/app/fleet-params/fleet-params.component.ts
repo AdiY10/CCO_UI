@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import 'ag-grid-enterprise';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
@@ -19,8 +19,20 @@ export class FleetParamsComponent implements OnInit {
   sendFleetRequest: EventEmitter<any> = new EventEmitter<any>();
   private gridApi;
   private gridColumnApi;
-  regions = Constants.AWSREGIONS;
-  OSs = Constants.OS;
+  regions:any;
+  OSs: any;  
+  
+  @Input() set region(region: any[]){
+    if (region !== undefined && region.length > 0){
+      this.regions = region;
+    }
+  }
+
+  @Input() set os(os: any[]){
+    if (os !== undefined && os.length > 0){
+      this.OSs = os;
+    }
+  }
   rowData;
   columnDefs;
   defaultColDef;

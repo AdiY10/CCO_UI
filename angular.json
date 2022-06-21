@@ -121,5 +121,8 @@
       }
     }
   },
-  "defaultProject": "awsTest"
+  "defaultProject": "awsTest",
+  "cli": {
+    "analytics": "7179a0de-74d5-4a32-b15c-ea7d2d1e61ae"
+  }
 }

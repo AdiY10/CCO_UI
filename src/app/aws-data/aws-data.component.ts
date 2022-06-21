@@ -19,4 +19,3 @@ export class AwsDataComponent implements OnInit {
     });
   }
 }
-

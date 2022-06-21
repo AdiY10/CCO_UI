@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FleetParamsComponent } from './fleet-params.component';
+import { AzureFleetSearchComponent } from './azure-fleet-search.component';
 
-describe('FleetParamsComponent', () => {
-  let component: FleetParamsComponent;
-  let fixture: ComponentFixture<FleetParamsComponent>;
+describe('AzureFleetSearchComponent', () => {
+  let component: AzureFleetSearchComponent;
+  let fixture: ComponentFixture<AzureFleetSearchComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FleetParamsComponent ]
+      declarations: [ AzureFleetSearchComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FleetParamsComponent);
+    fixture = TestBed.createComponent(AzureFleetSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

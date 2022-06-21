@@ -15,7 +15,7 @@ export class GridFilterComponent implements OnInit {
   applyFilter: EventEmitter<Filter> = new EventEmitter<Filter>();
   applyFilter2: EventEmitter<Filter> = new EventEmitter<Filter>();
   regions = Constants.AWSREGIONS;
-  OSs = Constants.OS;
+  OSs = Constants.AWSOS;
   typePurpose = Constants.TYPE_PURPOSE;
   interruptionBehavior = Constants.INTERRUPTION_BEHAVIOR;
   interruptionFrequency = Constants.INTERRUPTION_FREQUENCY;

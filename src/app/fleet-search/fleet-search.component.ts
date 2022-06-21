@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {RequestService} from '../request.service';
+import * as Constants from '../Constants';
 
 @Component({
   selector: 'app-fleet-search',
@@ -10,6 +11,8 @@ import {RequestService} from '../request.service';
 export class FleetSearchComponent implements OnInit {
 
   data: any;
+  region = Constants.AWSREGIONS;
+  os = Constants.AWSOS;
   example = [
     {
       offers: 'offers',
@@ -116,7 +119,7 @@ export class FleetSearchComponent implements OnInit {
   }
 
   sendFleetRequest(params: any) {
-    this.requestService.httpGetFleet(params).subscribe((result) => {
+    this.requestService.httpGetAWSFleet(params).subscribe((result) => {
       this.data = result;
     });
   }
