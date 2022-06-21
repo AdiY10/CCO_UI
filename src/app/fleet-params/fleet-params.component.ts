@@ -19,7 +19,7 @@ export class FleetParamsComponent implements OnInit {
   sendFleetRequest: EventEmitter<any> = new EventEmitter<any>();
   private gridApi;
   private gridColumnApi;
-  regions = Constants.REGIONS;
+  regions = Constants.AWSREGIONS;
   OSs = Constants.OS;
   rowData;
   columnDefs;

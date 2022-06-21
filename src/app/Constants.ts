@@ -20,7 +20,7 @@ export const OS: SelectObject[] = [
     {value: 'linux', viewValue: 'Linux'},
     {value: 'windows', viewValue: 'Windows'}
   ];
-export const REGIONS: SelectObject[] = [
+export const AWSREGIONS: SelectObject[] = [
     {value: 'us-east-2', viewValue: 'US East (Ohio)'},
     {value: 'us-east-1', viewValue: 'US East (N. Virginia)'},
     {value: 'us-west-1', viewValue: 'US West (N. California)'},
@@ -42,6 +42,10 @@ export const REGIONS: SelectObject[] = [
     {value: 'eu-north-1', viewValue: 'Europe (Stockholm)'},
     {value: 'me-south-1', viewValue: 'Middle East (Bahrain)'},
     {value: 'sa-east-1', viewValue: 'South America (São Paulo)'},
+    {value: 'all', viewValue: 'All'},
+  ];
+  export const AzureREGIONS: SelectObject[] = [
+    {value: 'us-east-2', viewValue: 'US East (Ohio)'},
     {value: 'all', viewValue: 'All'},
   ];
 export const TYPE_PURPOSE: SelectObject[] = [
