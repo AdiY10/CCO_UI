@@ -45,7 +45,7 @@ export const AWSREGIONS: SelectObject[] = [
     {value: 'all', viewValue: 'All'},
   ];
   export const AzureREGIONS: SelectObject[] = [
-    {value: 'us-east-2', viewValue: 'US East (Ohio)'},
+    {value: 'East US', viewValue: 'East US'},
     {value: 'all', viewValue: 'All'},
   ];
 export const TYPE_PURPOSE: SelectObject[] = [
