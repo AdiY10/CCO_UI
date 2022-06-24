@@ -112,6 +112,12 @@ export class AzureFleetSearchComponent implements OnInit {
       ],
     },
   ];
+  
+  payment = {
+        name:"payment",
+        options:["Spot", "Pay as You Go"] 
+  };
+
   constructor( public requestService: RequestService) { }
 
   ngOnInit(): void {

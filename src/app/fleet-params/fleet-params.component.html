@@ -1,46 +1,38 @@
-
 <div>
   <div style="height: 100%; display: flex; flex-direction: column;">
     <div style="margin-bottom: 4px;">
       <form>
-      <mat-form-field>
-        <mat-label>OS</mat-label>
-        <mat-select [(ngModel)]="selectedOs" name="Os" required>
-          <mat-option *ngFor="let o of OSs" [value]="o.value">{{o.viewValue}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field >
-        <mat-label>Region</mat-label>
-        <mat-select [(ngModel)]="selectedRegion" name="region">>
-          <mat-option *ngFor="let region of regions" [value]="region.value">{{region.viewValue}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <button mat-button (click)="addApp()">Add App</button>
-      <button mat-button (click)="onRemoveApp()" [disabled]="!rowSelected">Remove App</button>
-      <button mat-button (click)="addComponentToApp()" [disabled]="!rowSelected">Add comp</button>
-      <button mat-button (click)="removeSelectedComponents()" >Remove selected components</button>
-      <button mat-button (click)="sendRequest()">Send request</button>
+        <mat-form-field>
+          <mat-label>OS</mat-label>
+          <mat-select [(ngModel)]="selectedOs" name="Os" required>
+            <mat-option *ngFor="let o of OSs" [value]="o.value">{{o.viewValue}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>{{paymentOptions!.name}}</mat-label>
+          <mat-select [(ngModel)]="selectedOs" name="{{paymentOptions!.name}}" required>
+            <mat-option *ngFor="let o of paymentOptions.options" [value]="o">{{o}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Region</mat-label>
+          <mat-select [(ngModel)]="selectedRegion" name="region">>
+            <mat-option *ngFor="let region of regions" [value]="region.value">{{region.viewValue}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-button (click)="addApp()">Add App</button>
+        <button mat-button (click)="onRemoveApp()" [disabled]="!rowSelected">Remove App</button>
+        <button mat-button (click)="addComponentToApp()" [disabled]="!rowSelected">Add comp</button>
+        <button mat-button (click)="removeSelectedComponents()">Remove selected components</button>
+        <button mat-button (click)="sendRequest()">Send request</button>
       </form>
     </div>
     <div style="flex-grow: 1;">
-      <ag-grid-angular
-        #agGrid
-        style="width: 1800px; max-height: 100%;"
-        id="myGrid"
-        class="ag-theme-alpine"
-        [rowData]="rowData"
-        [columnDefs]="columnDefs"
-        [defaultColDef]="defaultColDef"
-        [groupDefaultExpanded]="false"
-        [masterDetail]="true"
-        [rowSelection]="rowSelection"
-        [animateRows]="true"
-        [detailCellRendererParams]="detailCellRendererParams"
-        [detailRowAutoHeight]="true"
-        [domLayout]="domLayout"
-        (selectionChanged)="onRowSelected($event)"
-        (gridReady)="onGridReady($event)"
-      ></ag-grid-angular>
+      <ag-grid-angular #agGrid style="width: 1800px; max-height: 100%;" id="myGrid" class="ag-theme-alpine"
+        [rowData]="rowData" [columnDefs]="columnDefs" [defaultColDef]="defaultColDef" [groupDefaultExpanded]="false"
+        [masterDetail]="true" [rowSelection]="rowSelection" [animateRows]="true"
+        [detailCellRendererParams]="detailCellRendererParams" [detailRowAutoHeight]="true" [domLayout]="domLayout"
+        (selectionChanged)="onRowSelected($event)" (gridReady)="onGridReady($event)"></ag-grid-angular>
     </div>
   </div>
 </div>

@@ -113,6 +113,11 @@ export class FleetSearchComponent implements OnInit {
       ],
     },
   ];
+
+  payment = {
+        name:"payment",
+        options:["Spot", "On-Demand"] 
+  };
   constructor( public requestService: RequestService) { }
 
   ngOnInit(): void {

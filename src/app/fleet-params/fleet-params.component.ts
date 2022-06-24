@@ -21,6 +21,7 @@ export class FleetParamsComponent implements OnInit {
   private gridColumnApi;
   regions:any;
   OSs: any;  
+  paymentOptions :any;
   
   @Input() set region(region: any[]){
     if (region !== undefined && region.length > 0){
@@ -33,6 +34,14 @@ export class FleetParamsComponent implements OnInit {
       this.OSs = os;
     }
   }
+
+  @Input() set payment(payment: any[]){
+    if (payment !== undefined){
+      this.paymentOptions = payment;
+      console.log(this.paymentOptions);
+    }
+  }
+
   rowData;
   columnDefs;
   defaultColDef;
