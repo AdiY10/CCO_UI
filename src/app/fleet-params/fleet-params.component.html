@@ -10,7 +10,7 @@
         </mat-form-field>
         <mat-form-field>
           <mat-label>{{paymentOptions!.name}}</mat-label>
-          <mat-select [(ngModel)]="selectedOs" name="{{paymentOptions!.name}}" required>
+          <mat-select [(ngModel)]="selectedPayment" name="{{paymentOptions!.name}}" required>
             <mat-option *ngFor="let o of paymentOptions.options" [value]="o">{{o}}</mat-option>
           </mat-select>
         </mat-form-field>

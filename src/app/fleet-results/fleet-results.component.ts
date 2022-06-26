@@ -43,8 +43,6 @@ export class FleetResultsComponent implements OnInit {
           { field: 'spot_price' },
           { field: 'cpu' },
           { field: 'memory' },
-          { field: 'CPU/Price_Score' },
-          { field: 'Memory/Price_Score' },
           { field: 'onDemandPrice' },
           { field: 'discount' },
         ],

@@ -50,6 +50,7 @@ export class FleetParamsComponent implements OnInit {
   rowSelected = false;
   compSelected = false;
   selectedOs: any;
+  selectedPayment: any;
   selectedRegion: any;
   domLayout = 'autoHeight';
   constructor(private modalService: NgbModal) {
@@ -125,7 +126,7 @@ export class FleetParamsComponent implements OnInit {
     this.gridApi.forEachNode((node) => {
       data.push(node.data);
     });
-    this.sendFleetRequest.emit({selectedOs: this.selectedOs, region: this.selectedRegion, apps: data});
+    this.sendFleetRequest.emit({selectedOs: this.selectedOs,payment: this.selectedPayment ,region: this.selectedRegion, apps: data});
 
   }
 
