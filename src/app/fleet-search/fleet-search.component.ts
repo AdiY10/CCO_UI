@@ -18,6 +18,8 @@ export class FleetSearchComponent implements OnInit {
         name:"Pricing Method",
         options:["Spot", "On-Demand"] 
   };
+  hideelements = {};
+
   constructor( public requestService: RequestService) { }
 
   ngOnInit(): void {

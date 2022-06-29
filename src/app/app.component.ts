@@ -15,7 +15,7 @@ export class AppComponent {
   }
 
   onApplyFilter(filter: Filter): void {
-    this.requestService.httpGetPrices(filter).subscribe(data => {
+    this.requestService.httpGetAWSPrices(filter).subscribe(data => {
       this.data = data;
     });
   }

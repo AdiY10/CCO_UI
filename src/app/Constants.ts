@@ -24,7 +24,13 @@ export const AWSOS: SelectObject[] = [
 export const AzureOS: SelectObject[] = [
     {value: 'linux', viewValue: 'Linux'},
     {value: 'windows', viewValue: 'Windows'}
-  ];  
+  ];
+  
+  export const HybridOS: SelectObject[] = [
+    {value: 'linux', viewValue: 'Linux'},
+    {value: 'windows', viewValue: 'Windows'}
+  ];
+
 export const AWSREGIONS: SelectObject[] = [
     {value: 'all', viewValue: 'All'},
     {value: 'us-east-2', viewValue: 'US East (Ohio)'},
@@ -96,6 +102,7 @@ export const AzureREGIONS: SelectObject[] = [
     {value: 'South Africa North', viewValue: 'South Africa North'},
     {value: 'South Africa West', viewValue: 'South Africa West'},
   ];
+  
 export const TYPE_PURPOSE: SelectObject[] = [
     {value: 'General Purpose', viewValue: 'General Purpose'},
     {value: 'Compute Optimized', viewValue: 'Compute Optimized'},

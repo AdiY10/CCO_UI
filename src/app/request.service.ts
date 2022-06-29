@@ -12,9 +12,14 @@ export class RequestService {
   constructor(private http: HttpClient) { }
 
 
-  public httpGetPrices(filter: Filter): Observable<any>{
+  public httpGetAWSPrices(filter: Filter): Observable<any>{
     const options = {headers: new HttpHeaders({'Content-Type':  'application/json'})};
-    return this.http.post('http://127.0.0.1:5000/getPrices', filter, options);
+    return this.http.post('http://127.0.0.1:5000/getAWSPrices', filter, options);
+  }
+
+  public httpGetAzurePrices(filter: Filter): Observable<any>{
+    const options = {headers: new HttpHeaders({'Content-Type':  'application/json'})};
+    return this.http.post('http://127.0.0.1:5000/getAzurePrices', filter, options);
   }
 
   public httpGetAWSFleet(apps): Observable<any>{
@@ -25,6 +30,11 @@ export class RequestService {
   public httpGetAzureFleet(apps): Observable<any>{
     const options = {headers: new HttpHeaders({'Content-Type':  'application/json'})};
     return this.http.post('http://127.0.0.1:5000/getAzureFleet', apps, options);
+  }
+
+  public httpHybridCloudFleet(apps): Observable<any>{
+    const options = {headers: new HttpHeaders({'Content-Type':  'application/json'})};
+    return this.http.post('http://127.0.0.1:5000/getHybridCloudFleet', apps, options);
   }
 
   public httpGetAWSData(): Observable<any>{

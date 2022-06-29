@@ -41,10 +41,10 @@ export class FleetResultsComponent implements OnInit {
         columnDefs: [
           { field: 'typeName', cellRenderer: 'agGroupCellRenderer' },
           { field: 'spot_price' },
-          { field: 'cpu' },
-          { field: 'memory' },
           { field: 'onDemandPrice' },
           { field: 'discount' },
+          { field: 'cpu' },
+          { field: 'memory' },
         ],
         defaultColDef: { flex: 1 },
         groupDefaultExpanded: 0,

@@ -26,6 +26,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddAppModalComponent } from './fleet-params/add-app-modal/add-app-modal.component';
 import { AwsDataComponent } from './aws-data/aws-data.component';
 import { AzureFleetSearchComponent } from './azure-fleet-search/azure-fleet-search.component';
+import { HybridCloudComponent } from './hybrid-cloud/hybrid-cloud.component';
+import { AzureSingleInstanceComponent } from './azure-single-instance/azure-single-instance.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { AzureFleetSearchComponent } from './azure-fleet-search/azure-fleet-sear
     FleetParamsComponent,
     AddComponentModalComponent,
     AddAppModalComponent,
-    AzureFleetSearchComponent
+    AzureFleetSearchComponent,
+    HybridCloudComponent,
+    AzureSingleInstanceComponent
   ],
   imports: [
     BrowserModule,

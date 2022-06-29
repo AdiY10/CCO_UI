@@ -13,12 +13,13 @@ export class AzureFleetSearchComponent implements OnInit {
    region = Constants.AzureREGIONS;
    os = Constants.AzureOS;
    
-  
   payment = {
         name:"Pricing Method",
         options:["Spot", "Pay as You Go"] 
   };
 
+  hideelements = {};
+  
   constructor( public requestService: RequestService) { }
 
   ngOnInit(): void {

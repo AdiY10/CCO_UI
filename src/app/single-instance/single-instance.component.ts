@@ -14,7 +14,7 @@ export class SingleInstanceComponent implements OnInit {
   ngOnInit(): void {
   }
   onApplyFilter(filter: Filter): void {
-    this.requestService.httpGetPrices(filter).subscribe(data => {
+    this.requestService.httpGetAWSPrices(filter).subscribe(data => {
       this.data = data;
     });
   }

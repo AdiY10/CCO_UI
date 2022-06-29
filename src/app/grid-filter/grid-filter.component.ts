@@ -37,6 +37,10 @@ export class GridFilterComponent implements OnInit {
   specificationStorage: any;
   name: string;
 
+  affinity:any;
+  antiaffinity:any;
+
+
   constructor() { }
 
   ngOnInit(): void {
@@ -58,6 +62,8 @@ export class GridFilterComponent implements OnInit {
       storageType: manualStorage ? this.storage : null,
       burstable: this.network == null || this.network <= 0 || this.burstable,
       name: this.name,
+      affinity:this.affinity,
+      antiaffinity:this.antiaffinity
     };
     this.applyFilter.emit(filter);
   }

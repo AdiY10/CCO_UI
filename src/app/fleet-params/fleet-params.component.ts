@@ -22,6 +22,7 @@ export class FleetParamsComponent implements OnInit {
   regions:any;
   OSs: any;  
   paymentOptions :any;
+  hideElements:any;
   
   @Input() set region(region: any[]){
     if (region !== undefined && region.length > 0){
@@ -39,6 +40,13 @@ export class FleetParamsComponent implements OnInit {
     if (payment !== undefined){
       this.paymentOptions = payment;
       console.log(this.paymentOptions);
+    }
+  }
+
+  @Input() set hideelements(hideelements: any[]){
+    if (hideelements !== undefined){
+      this.hideElements = hideelements;
+      console.log(this.hideElements);
     }
   }
 

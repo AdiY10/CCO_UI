@@ -14,7 +14,7 @@
             <mat-option *ngFor="let o of paymentOptions.options" [value]="o">{{o}}</mat-option>
           </mat-select>
         </mat-form-field>
-        <mat-form-field>
+        <mat-form-field *ngIf="!hideElements!.region">
           <mat-label>Region</mat-label>
           <mat-select [(ngModel)]="selectedRegion" name="region">>
             <mat-option *ngFor="let region of regions" [value]="region.value">{{region.viewValue}}</mat-option>
