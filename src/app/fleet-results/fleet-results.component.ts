@@ -40,11 +40,13 @@ export class FleetResultsComponent implements OnInit {
       detailGridOptions: {
         columnDefs: [
           { field: 'typeName', cellRenderer: 'agGroupCellRenderer' },
+          { field: 'total_price' },
           { field: 'spot_price' },
           { field: 'onDemandPrice' },
-          { field: 'discount' },
           { field: 'cpu' },
           { field: 'memory' },
+          { field: 'region' },
+          { field: 'discount' },
         ],
         defaultColDef: { flex: 1 },
         groupDefaultExpanded: 0,

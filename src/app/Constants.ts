@@ -25,6 +25,11 @@ export const AzureOS: SelectObject[] = [
     {value: 'linux', viewValue: 'Linux'},
     {value: 'windows', viewValue: 'Windows'}
   ];
+
+  export const paymentOptions: any = [
+    {value: 'Spot', viewValue: 'Spot'},
+    {value: 'OnDemand', viewValue: 'On Demand'}
+  ];
   
   export const HybridOS: SelectObject[] = [
     {value: 'linux', viewValue: 'Linux'},

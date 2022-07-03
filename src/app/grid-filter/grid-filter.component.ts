@@ -16,6 +16,7 @@ export class GridFilterComponent implements OnInit {
   applyFilter2: EventEmitter<Filter> = new EventEmitter<Filter>();
   regions = Constants.AWSREGIONS;
   OSs = Constants.AWSOS;
+  payment = Constants.paymentOptions;
   typePurpose = Constants.TYPE_PURPOSE;
   interruptionBehavior = Constants.INTERRUPTION_BEHAVIOR;
   interruptionFrequency = Constants.INTERRUPTION_FREQUENCY;
@@ -23,6 +24,7 @@ export class GridFilterComponent implements OnInit {
   storageTypes = Constants.STORAGE_TYPES;
   selectedRegion: string;
   selectedOs: string;
+  selectedpayment: string;
   memory: string;
   vCPUs: string;
   type: string;
@@ -36,7 +38,6 @@ export class GridFilterComponent implements OnInit {
   burstable: boolean;
   specificationStorage: any;
   name: string;
-
   affinity:any;
   antiaffinity:any;
 
@@ -63,7 +64,8 @@ export class GridFilterComponent implements OnInit {
       burstable: this.network == null || this.network <= 0 || this.burstable,
       name: this.name,
       affinity:this.affinity,
-      antiaffinity:this.antiaffinity
+      antiaffinity:this.antiaffinity,
+      payment: this.selectedpayment
     };
     this.applyFilter.emit(filter);
   }

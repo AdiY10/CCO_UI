@@ -27,6 +27,12 @@
         </mat-select>
       </mat-form-field>
       <mat-form-field>
+        <mat-label>Payment</mat-label>
+        <mat-select [(ngModel)]="selectedpayment" name="paymentoptions" required>
+          <mat-option *ngFor="let p of payment" [value]="p.value">{{p.viewValue}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
         <mat-label>Size (GB)</mat-label>
         <input [(ngModel)]="size" name="size" matInput placeholder="Placeholder" type="number">
         <mat-hint>min storage size</mat-hint>

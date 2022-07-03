@@ -22,6 +22,11 @@ export class RequestService {
     return this.http.post('http://127.0.0.1:5000/getAzurePrices', filter, options);
   }
 
+  public httpGetHybridPrices(filter: Filter): Observable<any>{
+    const options = {headers: new HttpHeaders({'Content-Type':  'application/json'})};
+    return this.http.post('http://127.0.0.1:5000/getHybridPrices', filter, options);
+  }
+
   public httpGetAWSFleet(apps): Observable<any>{
     const options = {headers: new HttpHeaders({'Content-Type':  'application/json'})};
     return this.http.post('http://127.0.0.1:5000/getAWSFleet', apps, options);

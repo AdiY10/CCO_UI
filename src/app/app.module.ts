@@ -28,6 +28,7 @@ import { AwsDataComponent } from './aws-data/aws-data.component';
 import { AzureFleetSearchComponent } from './azure-fleet-search/azure-fleet-search.component';
 import { HybridCloudComponent } from './hybrid-cloud/hybrid-cloud.component';
 import { AzureSingleInstanceComponent } from './azure-single-instance/azure-single-instance.component';
+import { HybridSingleInstanceComponent } from './hybrid-cloud-single/hybrid-cloud-single-instance.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { AzureSingleInstanceComponent } from './azure-single-instance/azure-sing
     AddAppModalComponent,
     AzureFleetSearchComponent,
     HybridCloudComponent,
-    AzureSingleInstanceComponent
+    AzureSingleInstanceComponent,
+    HybridSingleInstanceComponent
   ],
   imports: [
     BrowserModule,
