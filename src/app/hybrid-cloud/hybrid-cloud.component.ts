@@ -13,7 +13,7 @@ export class HybridCloudComponent implements OnInit {
   os = Constants.HybridOS;
   
   payment = {
-        name:"Pricing Method",
+        name:"Pricing Option",
         options:["Spot", "On-Demand"]  
   };
 

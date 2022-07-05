@@ -14,7 +14,7 @@ export class FleetSearchComponent implements OnInit {
   os = Constants.AWSOS;
 
   payment = {
-        name:"Pricing Method",
+        name:"Pricing Option",
         options:["Spot", "On-Demand"] 
   };
   hideelements = {};

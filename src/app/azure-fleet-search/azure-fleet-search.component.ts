@@ -14,7 +14,7 @@ export class AzureFleetSearchComponent implements OnInit {
    os = Constants.AzureOS;
    
   payment = {
-        name:"Pricing Method",
+        name:"Pricing Option",
         options:["Spot", "Pay as You Go"] 
   };
 

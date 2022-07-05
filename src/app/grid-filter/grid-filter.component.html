@@ -27,7 +27,7 @@
         </mat-select>
       </mat-form-field>
       <mat-form-field>
-        <mat-label>Payment</mat-label>
+        <mat-label>Pricing Option</mat-label>
         <mat-select [(ngModel)]="selectedpayment" name="paymentoptions" required>
           <mat-option *ngFor="let p of payment" [value]="p.value">{{p.viewValue}}</mat-option>
         </mat-select>
