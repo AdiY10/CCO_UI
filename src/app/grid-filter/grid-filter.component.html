@@ -41,12 +41,6 @@
       <br>
       <h6>Optional Instance Parameters</h6>
       <mat-form-field *ngIf="!minimize">
-        <mat-label>Region</mat-label>
-        <mat-select [(ngModel)]="selectedRegion" name="region">>
-          <mat-option *ngFor="let region of regions" [value]="region.value">{{region.viewValue}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field *ngIf="!minimize">
         <mat-label>Category</mat-label>
         <mat-select [(ngModel)]="type" name="type">
           <mat-option *ngFor="let type of typePurpose" [value]="type.value">{{type.viewValue}}</mat-option>
@@ -130,8 +124,20 @@
   <mat-card-actions *ngIf="!minimize">
     <button mat-button class="bg-primary text-white m-1" (click)="submit(manualStorage.checked, 'aws')">AWS
       request</button>
+    <mat-form-field *ngIf="!minimize">
+      <mat-label>Region</mat-label>
+      <mat-select [(ngModel)]="selectedRegion" name="region">>
+        <mat-option *ngFor="let region of AWSregions" [value]="region.value">{{region.viewValue}}</mat-option>
+      </mat-select>
+    </mat-form-field><br>
     <button mat-button class="bg-info text-white m-1" (click)="submit(manualStorage.checked,'azure')">Azure
       request</button>
+    <mat-form-field *ngIf="!minimize">
+      <mat-label>Region</mat-label>
+      <mat-select [(ngModel)]="selectedRegion" name="region">>
+        <mat-option *ngFor="let region of Azureregions" [value]="region.value">{{region.viewValue}}</mat-option>
+      </mat-select>
+    </mat-form-field><br>
     <button mat-button class="bg-success text-white m-1" (click)="submit(manualStorage.checked,'hybrid')">Hybrid
       request</button>
   </mat-card-actions>

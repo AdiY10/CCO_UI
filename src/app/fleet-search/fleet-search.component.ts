@@ -11,7 +11,6 @@ import * as Constants from '../Constants';
 export class FleetSearchComponent implements OnInit {
 
   data: any;
-  region = Constants.AWSREGIONS;
   os = Constants.AWSOS;
 
   payment = {

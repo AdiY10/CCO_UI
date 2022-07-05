@@ -14,7 +14,9 @@ export class GridFilterComponent implements OnInit {
   @Output()
   applyFilter: EventEmitter<Filter> = new EventEmitter<Filter>();
   applyFilter2: EventEmitter<Filter> = new EventEmitter<Filter>();
-  regions = Constants.AWSREGIONS;
+  //regions = Constants.AWSREGIONS;
+  AWSregions = Constants.AWSREGIONS;
+  Azureregions = Constants.AzureREGIONS;
   OSs = Constants.AWSOS;
   payment = Constants.paymentOptions;
   typePurpose = Constants.TYPE_PURPOSE;

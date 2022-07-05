@@ -19,17 +19,13 @@ export class FleetParamsComponent implements OnInit {
   sendFleetRequest: EventEmitter<any> = new EventEmitter<any>();
   private gridApi;
   private gridColumnApi;
-  regions:any;
+  //regions:any;
+  AWSregions = Constants.AWSREGIONS;
+  Azureregions = Constants.AzureREGIONS;
   OSs: any;  
   paymentOptions :any;
   hideElements:any;
   
-  @Input() set region(region: any[]){
-    if (region !== undefined && region.length > 0){
-      this.regions = region;
-    }
-  }
-
   @Input() set os(os: any[]){
     if (os !== undefined && os.length > 0){
       this.OSs = os;

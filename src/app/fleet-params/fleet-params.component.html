@@ -14,12 +14,6 @@
             <mat-option *ngFor="let o of paymentOptions.options" [value]="o">{{o}}</mat-option>
           </mat-select>
         </mat-form-field>
-        <mat-form-field *ngIf="!hideElements!.region">
-          <mat-label>Region</mat-label>
-          <mat-select [(ngModel)]="selectedRegion" name="region">>
-            <mat-option *ngFor="let region of regions" [value]="region.value">{{region.viewValue}}</mat-option>
-          </mat-select>
-        </mat-form-field>
         <button mat-button (click)="addApp()">Add App</button>
         <button mat-button (click)="onRemoveApp()" [disabled]="!rowSelected">Remove App</button>
         <button mat-button (click)="addComponentToApp()" [disabled]="!rowSelected">Add comp</button>
@@ -36,8 +30,22 @@
     </div>
     <div class="mt-3">
       <button mat-button class="bg-primary text-white m-1" (click)="sendRequest('aws')">AWS request</button>
+      <mat-form-field *ngIf="!hideElements!.AWSregions">
+        <mat-label>Region</mat-label>
+        <mat-select [(ngModel)]="selectedRegion" name="region">>
+          <mat-option *ngFor="let region of AWSregions" [value]="region.value">{{region.viewValue}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
       <button mat-button class="bg-info text-white m-1" (click)="sendRequest('azure')">Azure request</button>
-      <button mat-button class="bg-success text-white m-1" (click)="sendRequest('hybrid')">Hybrid request</button>
+      <mat-form-field *ngIf="!hideElements!.Azureregions">
+        <mat-label>Region</mat-label>
+        <mat-select [(ngModel)]="selectedRegion" name="region">>
+          <mat-option *ngFor="let region of Azureregions" [value]="region.value">{{region.viewValue}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <button mat-button class="bg-success text-white m-1" (click)="sendRequest('hybrid')">Hybrid request</button><br>
     </div>
 
   </div>
