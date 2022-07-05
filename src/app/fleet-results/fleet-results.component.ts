@@ -40,8 +40,8 @@ export class FleetResultsComponent implements OnInit {
       detailGridOptions: {
         columnDefs: [
           { field: 'typeName', cellRenderer: 'agGroupCellRenderer' },
-          { field: 'priceAfterDiscount' },
-          { field: 'spot_price' },
+          { headerName: 'Price', field: 'priceAfterDiscount' },
+          { headerName: 'Spot Price', field: 'spot_price' },
           { field: 'onDemandPrice' },
           { field: 'cpu' },
           { field: 'memory' },
