@@ -47,7 +47,7 @@ export class GridFilterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submit(manualStorage: boolean): void {
+  submit(manualStorage: boolean, request): void {
     const filter = {
       selectedRegion: this.selectedRegion,
       selectedOs: this.selectedOs,
@@ -65,7 +65,8 @@ export class GridFilterComponent implements OnInit {
       name: this.name,
       affinity:this.affinity,
       antiaffinity:this.antiaffinity,
-      payment: this.selectedpayment
+      payment: this.selectedpayment,
+      request: request
     };
     this.applyFilter.emit(filter);
   }

@@ -26,8 +26,23 @@ export class FleetSearchComponent implements OnInit {
   }
 
   sendFleetRequest(params: any) {
-    this.requestService.httpGetAWSFleet(params).subscribe((result) => {
+    if(params.request == 'aws'){
+     this.requestService.httpGetAWSFleet(params).subscribe((result) => {
       this.data = result;
     });
+    }
+
+    if(params.request == 'azure'){
+      this.requestService.httpGetAzureFleet(params).subscribe((result) => {
+       this.data = result;
+      });
+    }
+
+    if(params.request == 'hybrid'){
+       this.requestService.httpHybridCloudFleet(params).subscribe((result) => {
+        this.data = result;
+       });
+    }
+    
   }
 }

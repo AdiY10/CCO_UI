@@ -45,6 +45,7 @@ export interface SelectObject {
 }
 
 export interface Filter {
+  request: string;
   selectedRegion?: string;
   selectedOs: string;
   memory: string;

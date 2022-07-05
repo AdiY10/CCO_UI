@@ -129,12 +129,12 @@ export class FleetParamsComponent implements OnInit {
     });
   }
 
-  sendRequest() {
+  sendRequest(request) {
     const data = [];
     this.gridApi.forEachNode((node) => {
       data.push(node.data);
     });
-    this.sendFleetRequest.emit({selectedOs: this.selectedOs,payment: this.selectedPayment ,region: this.selectedRegion, apps: data});
+    this.sendFleetRequest.emit({selectedOs: this.selectedOs,payment: this.selectedPayment ,region: this.selectedRegion, apps: data,request: request});
 
   }
 
