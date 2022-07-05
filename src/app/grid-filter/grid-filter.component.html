@@ -65,13 +65,13 @@
         <input [(ngModel)]="network" name="network" matInput placeholder="Placeholder" type="number">
         <mat-hint>required network performance (Gbs)</mat-hint>
       </mat-form-field>
-      <mat-form-field class="m-1">
+      <mat-form-field class="m-1" *ngIf="minimize">
         <mat-label>Affinity</mat-label>
         <input matInput [(ngModel)]="affinity" name="Affinity" placeholder="Placeholder" type="text">
         <mat-hint>example: 1, 2</mat-hint>
       </mat-form-field>
 
-      <mat-form-field>
+      <mat-form-field *ngIf="minimize">
         <mat-label>Anti-Affinity</mat-label>
         <input matInput [(ngModel)]="antiaffinity" name="Anti-Affinity" placeholder="Placeholder" type="text">
         <mat-hint>example: 1, 2</mat-hint>
