@@ -29,7 +29,7 @@
         (selectionChanged)="onRowSelected($event)" (gridReady)="onGridReady($event)"></ag-grid-angular>
     </div>
     <div class="mt-3">
-      <button mat-button class="bg-primary text-white m-1" (click)="sendRequest('aws')">AWS request</button>
+      <button mat-button class="bg-primary text-white m-1" (click)="sendRequest('aws')">AWS</button>
       <mat-form-field *ngIf="!hideElements!.AWSregions">
         <mat-label>Region</mat-label>
         <mat-select [(ngModel)]="selectedRegion" name="region">>
@@ -37,7 +37,7 @@
         </mat-select>
       </mat-form-field>
       <br>
-      <button mat-button class="bg-info text-white m-1" (click)="sendRequest('azure')">Azure request</button>
+      <button mat-button class="bg-info text-white m-1" (click)="sendRequest('azure')">Azure</button>
       <mat-form-field *ngIf="!hideElements!.Azureregions">
         <mat-label>Region</mat-label>
         <mat-select [(ngModel)]="selectedRegion" name="region">>
@@ -45,7 +45,7 @@
         </mat-select>
       </mat-form-field>
       <br>
-      <button mat-button class="bg-success text-white m-1" (click)="sendRequest('hybrid')">Hybrid request</button><br>
+      <button mat-button class="bg-success text-white m-1" (click)="sendRequest('hybrid')">Hybrid</button><br>
     </div>
 
   </div>
