@@ -127,12 +127,16 @@
       </div>
     </form>
   </mat-card-content>
-  <mat-card-actions>
+  <mat-card-actions *ngIf="!minimize">
     <button mat-button class="bg-primary text-white m-1" (click)="submit(manualStorage.checked, 'aws')">AWS
       request</button>
     <button mat-button class="bg-info text-white m-1" (click)="submit(manualStorage.checked,'azure')">Azure
       request</button>
     <button mat-button class="bg-success text-white m-1" (click)="submit(manualStorage.checked,'hybrid')">Hybrid
       request</button>
+  </mat-card-actions>
+  <mat-card-actions *ngIf="minimize">
+    <button mat-button class="bg-primary text-white m-1" (click)="submit(manualStorage.checked, '')">
+      Submit</button>
   </mat-card-actions>
 </mat-card>
