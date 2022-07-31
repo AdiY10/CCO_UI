@@ -74,6 +74,8 @@ export class FleetParamsComponent implements OnInit {
           { field: 'vCPUs',
             cellRenderer: 'agGroupCellRenderer'},
           { field: 'memory' },
+          { field: 'affinity' },
+          { headerName: 'Anti Affinity', field: 'antiaffinity' },
           { field: 'network' },
           { field: 'burstable' },
           { field: 'size' },

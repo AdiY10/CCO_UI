@@ -46,6 +46,7 @@ export class FleetResultsComponent implements OnInit {
           { field: 'cpu' },
           { field: 'memory' },
           { field: 'region' },
+          { headerName: 'Cloud Provider',field: 'CloudProvider' },
           { field: 'discount' },
         ],
         defaultColDef: { flex: 1 },

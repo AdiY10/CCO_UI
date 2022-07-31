@@ -68,13 +68,13 @@
       <mat-form-field class="m-1" *ngIf="minimize">
         <mat-label>Affinity</mat-label>
         <input matInput [(ngModel)]="affinity" name="Affinity" placeholder="Placeholder" type="text">
-        <mat-hint>example: 1, 2</mat-hint>
+        <mat-hint>example: 1,2</mat-hint>
       </mat-form-field>
 
       <mat-form-field *ngIf="minimize">
         <mat-label>Anti-Affinity</mat-label>
         <input matInput [(ngModel)]="antiaffinity" name="Anti-Affinity" placeholder="Placeholder" type="text">
-        <mat-hint>example: 1, 2</mat-hint>
+        <mat-hint>example: 1,2</mat-hint>
       </mat-form-field>
       <mat-checkbox class="example-margin" [(ngModel)]="burstable" name="burstable"
         [disabled]="network == null || network == 0">Burstable</mat-checkbox>

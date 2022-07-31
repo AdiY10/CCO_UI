@@ -17,7 +17,7 @@ export class AwsGridComponent implements OnInit {
     }
   }
   columnDefs = [
-    { headerName: 'Type name',
+    { headerName: 'Instance Type',
       field: 'typeName',
       filter: 'agTextColumnFilter',
       sortable: true},
@@ -35,6 +35,10 @@ export class AwsGridComponent implements OnInit {
       sortable: true},
     { headerName: 'OnDemand Price',
       field: 'onDemandPrice',
+      filter: 'agTextColumnFilter',
+      sortable: true},
+    { headerName: 'Cloud Provider',
+      field: 'CloudProvider',
       filter: 'agTextColumnFilter',
       sortable: true},
     { headerName: 'Region',
