@@ -121,28 +121,32 @@
       </div>
     </form>
   </mat-card-content>
-  <mat-card-actions *ngIf="!minimize">
-    <button mat-button class="bg-primary text-white m-1" (click)="submit(manualStorage.checked, 'aws')">AWS
-      </button>
-    <mat-form-field *ngIf="!minimize">
-      <mat-label>Region</mat-label>
-      <mat-select [(ngModel)]="selectedRegion" name="region">>
-        <mat-option *ngFor="let region of AWSregions" [value]="region.value">{{region.viewValue}}</mat-option>
-      </mat-select>
-    </mat-form-field><br>
-    <button mat-button class="bg-info text-white m-1" (click)="submit(manualStorage.checked,'azure')">Azure
-      </button>
-    <mat-form-field *ngIf="!minimize">
-      <mat-label>Region</mat-label>
-      <mat-select [(ngModel)]="selectedRegion" name="region">>
-        <mat-option *ngFor="let region of Azureregions" [value]="region.value">{{region.viewValue}}</mat-option>
-      </mat-select>
-    </mat-form-field><br>
-    <button mat-button class="bg-success text-white m-1" (click)="submit(manualStorage.checked,'hybrid')">Hybrid
-      </button>
-  </mat-card-actions>
-  <mat-card-actions *ngIf="minimize">
-    <button mat-button class="bg-primary text-white m-1" (click)="submit(manualStorage.checked, '')">
-      Submit</button>
-  </mat-card-actions>
+  <h5>Submit Plan</h5>
+  <mat-card class="submit-plan-card">
+    <mat-card-actions *ngIf="!minimize">
+      <button mat-button class="bg-primary text-white m-1" (click)="submit(manualStorage.checked, 'aws')">AWS
+        </button>
+      <mat-form-field *ngIf="!minimize">
+        <mat-label>Region</mat-label>
+        <mat-select [(ngModel)]="selectedRegion" name="region">>
+          <mat-option *ngFor="let region of AWSregions" [value]="region.value">{{region.viewValue}}</mat-option>
+        </mat-select>
+      </mat-form-field><br>
+      <button mat-button class="bg-info text-white m-1" (click)="submit(manualStorage.checked,'azure')">Azure
+        </button>
+      <mat-form-field *ngIf="!minimize">
+        <mat-label>Region</mat-label>
+        <mat-select [(ngModel)]="selectedRegion" name="region">>
+          <mat-option *ngFor="let region of Azureregions" [value]="region.value">{{region.viewValue}}</mat-option>
+        </mat-select>
+      </mat-form-field><br>
+      <button mat-button class="bg-success text-white m-1" (click)="submit(manualStorage.checked,'hybrid')">Hybrid Cloud
+        </button>
+    </mat-card-actions>
+    <mat-card-actions *ngIf="minimize">
+      <button mat-button class="bg-primary text-white m-1" (click)="submit(manualStorage.checked, '')">
+        Submit</button>
+    </mat-card-actions>
+  </mat-card>
+  
 </mat-card>

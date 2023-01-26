@@ -8,7 +8,10 @@
   flex: 1 1 auto;
   max-width: 400px;
 }
-
+.submit-plan-card {
+  flex: 1 1 auto;
+  max-width: 300px;
+}
 .mat-radio-button {
   margin-left: -7px;
 }

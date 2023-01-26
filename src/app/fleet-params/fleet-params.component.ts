@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import 'ag-grid-enterprise';
+import 'ag-grid-community';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import {Filter} from '../dataClasses';
@@ -71,11 +71,11 @@ export class FleetParamsComponent implements OnInit {
       detailGridOptions: {
         columnDefs: [
           { field: 'name'},
-          { field: 'vCPUs',
+          { headerName: 'vCPUs',field: 'vCPUs',
             cellRenderer: 'agGroupCellRenderer'},
           { field: 'memory' },
-          { field: 'affinity' },
-          { headerName: 'Anti Affinity', field: 'antiaffinity' },
+          { headerName: 'Run With',field: 'affinity' },
+          { headerName: 'Run Without', field: 'antiaffinity' },
           { field: 'network' },
           { field: 'burstable' },
           { field: 'size' },
