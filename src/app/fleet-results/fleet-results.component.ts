@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import 'ag-grid-enterprise';
+import 'ag-grid-enterprise' ;
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 
