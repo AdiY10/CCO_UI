@@ -1,8 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit, Renderer2 } from '@angular/core';
 import 'ag-grid-enterprise' ;
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
-
+import { ICellRendererParams } from 'ag-grid-community';
+import {RequestService} from '../request.service';
 
 @Component({
   selector: 'app-fleet-results',
@@ -27,11 +28,11 @@ export class FleetResultsComponent implements OnInit {
     }
   }
 
-  constructor() {
+  constructor(private renderer: Renderer2, public requestService: RequestService) {
     this.columnDefs = [
-
-      { field: 'price',  cellRenderer: 'agGroupCellRenderer' },
-      { field: 'region' },
+      { headerName: 'Total Price', field: 'price',  cellRenderer: 'agGroupCellRenderer' },
+      { headerName: 'Region', field: 'region' },
+      { headerName: ' ', cellRenderer: this.buttonRenderer},
     ];
     this.detailRowAutoHeight = true;
     this.defaultColDef = { flex: 1 };
@@ -71,6 +72,28 @@ export class FleetResultsComponent implements OnInit {
         params.successCallback(params.data.instances);
       },
     };
+  }
+  buttonRenderer(params: ICellRendererParams): HTMLElement {
+    const button = document.createElement('button');
+    button.innerText = 'Apply';
+    button.style.borderRadius = '20px';
+    button.style.backgroundColor = '#007bff';
+    button.style.color = 'white';
+    button.style.padding = '0px 16px';
+    button.style.fontSize = '14px';
+    button.style.width = '85px';
+    button.style.height = '38px';
+    button.style.fontWeight = 'bold';
+    button.style.border = 'none';
+    button.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.2)';
+    button.style.cursor = 'pointer';
+    button.addEventListener('click', () => {
+      // handle button click event here
+      this.requestService.httpApplyResults().subscribe((result) => {
+        this.data = result;
+       });
+    });
+    return button;
   }
   onGridReady(params): void {
     this.gridApi = params.api;

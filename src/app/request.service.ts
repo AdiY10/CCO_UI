@@ -47,5 +47,10 @@ export class RequestService {
     return this.http.post('http://127.0.0.1:5000/getAWSData', options);
   }
 
+  public httpApplyResults(): Observable<any>{
+    const options = {headers: new HttpHeaders({'Content-Type':  'application/json'})};
+    return this.http.post('http://127.0.0.1:5000/getAWSData', options);
+  }
+
   
 }
