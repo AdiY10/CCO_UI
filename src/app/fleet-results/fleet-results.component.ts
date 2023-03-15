@@ -87,6 +87,14 @@ export class FleetResultsComponent implements OnInit {
     button.style.border = 'none';
     button.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.2)';
     button.style.cursor = 'pointer';
+    button.style.transition = 'background-color 0.3 ease';
+    // Hover effect
+    button.addEventListener('mouseenter', () => {
+      button.style.backgroundColor = '#0056b3';
+    });
+    button.addEventListener('mouseleave', () => {
+      button.style.backgroundColor = '#007bff';
+    });
     button.addEventListener('click', () => {
       // handle button click event here
       this.requestService.httpApplyResults().subscribe((result) => {
