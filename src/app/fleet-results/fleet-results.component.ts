@@ -32,7 +32,7 @@ export class FleetResultsComponent implements OnInit {
     this.columnDefs = [
       { headerName: 'Total Price', field: 'price',  cellRenderer: 'agGroupCellRenderer' },
       { headerName: 'Region', field: 'region' },
-      { headerName: ' ', cellRenderer: this.buttonRenderer},
+      { headerName: ' ', cellRenderer: this.buttonRenderer.bind(this)},
     ];
     this.detailRowAutoHeight = true;
     this.defaultColDef = { flex: 1 };
@@ -73,7 +73,7 @@ export class FleetResultsComponent implements OnInit {
       },
     };
   }
-  buttonRenderer(params: ICellRendererParams): HTMLElement {
+  buttonRenderer(requestService: RequestService, params: ICellRendererParams): HTMLElement {
     const button = document.createElement('button');
     button.innerText = 'Apply';
     button.style.borderRadius = '20px';
