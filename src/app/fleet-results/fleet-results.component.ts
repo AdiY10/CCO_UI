@@ -30,9 +30,10 @@ export class FleetResultsComponent implements OnInit {
 
   constructor(private renderer: Renderer2, public requestService: RequestService) {
     this.columnDefs = [
-      { headerName: 'Total Price', field: 'price',  cellRenderer: 'agGroupCellRenderer' },
-      { headerName: 'Region', field: 'region' },
-      { headerName: ' ', cellRenderer: this.buttonRenderer.bind(this)},
+      { headerName: 'Index', valueGetter: 'node.rowIndex + 1', maxWidth: 150 ,  cellRenderer: 'agGroupCellRenderer' },
+      { headerName: 'Total Price', field: 'price', minWidth: 380, maxWidth: 400},
+      { headerName: 'Region', field: 'region' , minWidth: 380, maxWidth: 400},
+      { headerName: ' ', cellRenderer: (params) => this.buttonRenderer(this.requestService, params, params.node.rowIndex) },
     ];
     this.detailRowAutoHeight = true;
     this.defaultColDef = { flex: 1 };
@@ -73,7 +74,7 @@ export class FleetResultsComponent implements OnInit {
       },
     };
   }
-  buttonRenderer(requestService: RequestService, params: ICellRendererParams): HTMLElement {
+  buttonRenderer(requestService: RequestService, params: ICellRendererParams, rowIndex: number): HTMLElement {
     const button = document.createElement('button');
     button.innerText = 'Apply';
     button.style.borderRadius = '20px';
@@ -97,7 +98,10 @@ export class FleetResultsComponent implements OnInit {
     });
     button.addEventListener('click', () => {
       // handle button click event here
-      this.requestService.httpApplyResults().subscribe((result) => {
+      //console.log(params.colDef);
+      const rowNumber =  rowIndex + 1
+      console.log(`Row ${rowNumber} clicked, and will be launched`);
+      this.requestService.httpApplyResults(rowNumber).subscribe((result) => {
         this.data = result;
        });
     });
