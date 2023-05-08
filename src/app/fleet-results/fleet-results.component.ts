@@ -105,9 +105,12 @@ export class FleetResultsComponent implements OnInit {
         this.data = result;
        });
       // open pop-up window
-      const popupWindow = window.open('', 'Popup', 'width=500,height=300');
+      const popupWidth = 500;
+      const popupHeight = 200;
+      const leftPosition = (window.screen.width / 2) - (popupWidth / 2);
+      const topPosition = (window.screen.height / 2) - (popupHeight / 2);
+      const popupWindow = window.open('', 'Popup', `width=${popupWidth},height=${popupHeight},left=${leftPosition},top=${topPosition}`);
       popupWindow.document.write('<html><head><style>body{background-color:black; color:white;}</style></head><body>Applying results</body></html>');
-
 
       // close pop-up window after two seconds
       setTimeout(() => {
