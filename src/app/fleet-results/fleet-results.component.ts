@@ -104,9 +104,26 @@ export class FleetResultsComponent implements OnInit {
       this.requestService.httpApplyResults(rowNumber).subscribe((result) => {
         this.data = result;
        });
+      // open pop-up window
+      const popupWindow = window.open('', 'Popup', 'width=500,height=300');
+      popupWindow.document.write('<html><head><style>body{background-color:black; color:white;}</style></head><body>Applying results</body></html>');
+
+
+      // close pop-up window after two seconds
+      setTimeout(() => {
+        popupWindow.close();
+      }, 1000);
     });
     return button;
   }
+  // function to show the shell
+showShell() {
+  const shell = document.getElementById('shell');
+  shell.style.display = 'block'; // show the shell
+  setTimeout(() => {
+    shell.style.display = 'none'; // hide the shell after 2 seconds
+  }, 20000);
+}
   onGridReady(params): void {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
