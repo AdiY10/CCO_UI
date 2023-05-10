@@ -1,8 +1,9 @@
 .mat-form-field {
   margin-left: 8px;
+  margin-right: 46px;
 }
 
 .submit-plan {
   flex: 1 1 auto;
-  max-width: 300px;
+  max-width: 720px;
 }

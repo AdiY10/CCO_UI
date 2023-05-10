@@ -82,7 +82,7 @@ export class FleetParamsComponent implements OnInit {
           { field: 'behavior' },
           { field: 'frequency' },
           { field: 'iops' },
-          { field: 'throughput' },
+          //{ field: 'throughput' },
           { field: 'storageType'}
         ],
         defaultColDef: { flex: 1 },

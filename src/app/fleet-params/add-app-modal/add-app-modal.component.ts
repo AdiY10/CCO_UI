@@ -7,7 +7,8 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class AddAppModalComponent implements OnInit {
   name: string;
-  share: boolean;
+//  share: boolean;
+  public share = true;
 
   constructor(public activeModal: NgbActiveModal) {}
 
