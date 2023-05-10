@@ -14,41 +14,46 @@
             <mat-option *ngFor="let o of paymentOptions.options" [value]="o">{{o}}</mat-option>
           </mat-select>
         </mat-form-field>
-        <button mat-button (click)="addApp()">Add App</button>
-        <button mat-button (click)="onRemoveApp()" [disabled]="!rowSelected">Remove App</button>
-        <button mat-button (click)="addComponentToApp()" [disabled]="!rowSelected">Add comp</button>
-        <button mat-button (click)="removeSelectedComponents()">Remove selected components</button>
+        <button mat-button (click)="addApp()">Add Application</button>
+        <button mat-button (click)="onRemoveApp()" [disabled]="!rowSelected">Remove Application</button>
+        <button mat-button (click)="addComponentToApp()" [disabled]="!rowSelected">Add Component</button>
+        <button mat-button (click)="removeSelectedComponents()">Remove Component</button>
         <!-- <button mat-button (click)="sendRequest('aws')">Send request</button> -->
       </form>
     </div>
     <div style="flex-grow: 1;">
-      <ag-grid-angular #agGrid style="width: 1800px; max-height: 100%;" id="myGrid" class="ag-theme-alpine"
+      <ag-grid-angular #agGrid style="width: 1650px; max-height: 100%;" id="myGrid" class="ag-theme-alpine"
         [rowData]="rowData" [columnDefs]="columnDefs" [defaultColDef]="defaultColDef" [groupDefaultExpanded]="false"
         [masterDetail]="true" [rowSelection]="rowSelection" [animateRows]="true"
         [detailCellRendererParams]="detailCellRendererParams" [detailRowAutoHeight]="true" [domLayout]="domLayout"
         (selectionChanged)="onRowSelected($event)" (gridReady)="onGridReady($event)"></ag-grid-angular>
     </div>
+
+
+    <!-- Modified for the Demo -->
+  
     <h5>Submit Plan</h5>
-    <mat-card class = "submit-plan">
-      <div class="mt-3">
-        <button mat-button class="bg-primary text-white m-1" (click)="sendRequest('aws')">AWS</button>
+    <mat-card class="submit-plan">
+      <div class="mt-3" style="display: flex; align-items: center;">
+        <button mat-button class="bg-primary text-white m-1" style="font-size: 16px; padding: 6px 12px;" (click)="sendRequest('aws')">AWS</button>
         <mat-form-field *ngIf="!hideElements!.AWSregions">
           <mat-label>Region</mat-label>
           <mat-select [(ngModel)]="selectedRegion" name="region">>
             <mat-option *ngFor="let region of AWSregions" [value]="region.value">{{region.viewValue}}</mat-option>
           </mat-select>
         </mat-form-field>
-        <br>
-        <button mat-button class="bg-info text-white m-1" (click)="sendRequest('azure')">Azure</button>
+        <button mat-button class="bg-info text-white m-1" style="font-size: 16px; padding: 6px 12px;" (click)="sendRequest('azure')">Azure</button>
         <mat-form-field *ngIf="!hideElements!.Azureregions">
           <mat-label>Region</mat-label>
           <mat-select [(ngModel)]="selectedRegion" name="region">>
             <mat-option *ngFor="let region of Azureregions" [value]="region.value">{{region.viewValue}}</mat-option>
           </mat-select>
         </mat-form-field>
-        <br>
-        <button mat-button class="bg-success text-white m-1" (click)="sendRequest('hybrid')">Hybrid</button><br>
+        <button mat-button class="bg-success text-white m-1" style="font-size: 16px; padding: 6px 12px;" (click)="sendRequest('hybrid')">Hybrid</button>
       </div>
-  </mat-card>
+    </mat-card>
+    
+    
+    
   </div>
 </div>

@@ -121,7 +121,7 @@
       </div>
     </form>
   </mat-card-content>
-  <h5>Submit Plan</h5>
+  <!--<h5>Submit Component</h5>-->
   <mat-card class="submit-plan-card">
     <mat-card-actions *ngIf="!minimize">
       <button mat-button class="bg-primary text-white m-1" (click)="submit(manualStorage.checked, 'aws')">AWS
@@ -145,7 +145,8 @@
     </mat-card-actions>
     <mat-card-actions *ngIf="minimize">
       <button mat-button class="bg-primary text-white m-1" (click)="submit(manualStorage.checked, '')">
-        Submit</button>
+        Submit
+      </button>
     </mat-card-actions>
   </mat-card>
   
